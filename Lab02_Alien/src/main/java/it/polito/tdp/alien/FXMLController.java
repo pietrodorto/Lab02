@@ -32,15 +32,29 @@ public class FXMLController {
     @FXML
     void doTranslate(ActionEvent event) {
     	
-    	
+    	txtWord.clear();
     	String word = txtWord.getText();
     	
-    	if(word != null || word.length()!= 0)
     	StringTokenizer st = new StringTokenizer(word," ");
     	
-    	String alien = st.nextToken();
+    	if (word == null || word.length() == 0) {
+    		txtDictionary.setText("Inserici una o più parole");
+    		return;
+    	}
     	
-    	if()
+    	String alien = st.nextToken();
+    	if(!alien.matches("[[A-Za-z]]*"))
+    	
+    	if(st.hasMoreTokens()) {
+    		
+    		String trans = st.nextToken();
+    		
+    		
+    		
+    		
+    	}
+    	
+    
     	
 
     }
