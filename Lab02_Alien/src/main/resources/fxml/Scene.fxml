@@ -60,7 +60,7 @@
                   <Insets bottom="2.0" />
                </VBox.margin>
             </HBox>
-            <TextArea fx:id="txtDictionary" text="Welcome to Alien Dictionary v2019." />
+            <TextArea fx:id="txtDictionary" promptText="Welcome to Alien Dictionary v2019." />
          </children>
       </VBox>
    </center>
