@@ -9,6 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public class FXMLController {
+	
+	private AlienDictionary dictionary = new AlienDictionary();
 
     @FXML
     private TextField txtWord;
@@ -32,8 +34,8 @@ public class FXMLController {
     @FXML
     void doTranslate(ActionEvent event) {
     	
-    	txtWord.clear();
-    	String word = txtWord.getText();
+    	
+    	String word = txtWord.getText().toLowerCase();
     	
     	StringTokenizer st = new StringTokenizer(word," ");
     	
@@ -43,16 +45,24 @@ public class FXMLController {
     	}
     	
     	String alien = st.nextToken();
-    	if(!alien.matches("[[A-Za-z]]*"))
+    	
     	
     	if(st.hasMoreTokens()) {
     		
-    		String trans = st.nextToken();
+    		String trans = st.nextToken().toLowerCase();
     		
+    		if(!alien.matches("[a-zA-Z]*") || !trans.matches("[a-zA-Z]*")) {
+    			txtDictionary.setText("Inserici una o più parole");
+        		return;
+    		}
     		
-    		
-    		
+    		dictionary.addWord(alien, trans);
+    		txtDictionary.setText("hai aggiunto la parola :"+alien+" / "+trans);
+    				
     	}
+    	
+    	String trad = dictionary.translateWord(alien);
+    	txtDictionary.setText(trad.toString());
     	
     
     	
