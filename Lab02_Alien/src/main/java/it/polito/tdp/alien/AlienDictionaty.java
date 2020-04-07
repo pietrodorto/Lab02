@@ -10,11 +10,27 @@ public class AlienDictionaty {
 		super();
 	}
 	
-	public void addWord(String alienWord, String translation) {
+	public void addWord(String alien, String trans) {
 		
-		Word w = new Word(alienWord, translation);
+		Word w = new Word(alien, trans);
 		if(dictionary.contains(w)) {
-			
+			dictionary.get(dictionary.indexOf(w)).setTranslation(trans);
 			}
+		dictionary.add(w);
 	}
+	
+	public String translateWord(String alienWord) {
+		String r = "";
+		Word datradurre = new Word(alienWord,null);
+		for(Word w : dictionary ) {
+			
+			if(w.equals(datradurre)) 
+				r = w.getTranslation();	 
+			else 
+				r = null;
+		}	
+		return r;
+	}
+	
+	
 }
