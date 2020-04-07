@@ -23,6 +23,8 @@ public class FXMLController {
 
     @FXML
     void doTranslate(ActionEvent event) {
+    	
+    
     }
     
     

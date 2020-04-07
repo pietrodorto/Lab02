@@ -6,11 +6,9 @@ public class Word {
 	private String translation;
 	
 	
-	public Word(Word w) {
-		this.alienWord = w.alienWord;
-		this.translation = w.translation;
-		
-	}
+	public Word(String w) {
+		this.alienWord = w;
+		}
 	
 	public Word(String alienWord, String translation) {
 		this.alienWord = alienWord;

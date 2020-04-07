@@ -20,16 +20,14 @@ public class AlienDictionaty {
 	}
 	
 	public String translateWord(String alienWord) {
-		String r = "";
-		Word datradurre = new Word(alienWord,null);
-		for(Word w : dictionary ) {
+		
+		Word datradurre = new Word(alienWord);
+		if(dictionary.contains(datradurre)) {
+			return dictionary.get(dictionary.indexOf(datradurre)).getTranslation();
+		}
+		return null;
+		
 			
-			if(w.equals(datradurre)) 
-				r = w.getTranslation();	 
-			else 
-				r = null;
-		}	
-		return r;
 	}
 	
 	

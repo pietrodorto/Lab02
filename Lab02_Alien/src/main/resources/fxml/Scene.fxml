@@ -51,8 +51,14 @@
                      <image>
                         <Image url="@../../../../../../../OneDrive/Desktop/unnamed.png" />
                      </image>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                   </ImageView>
                </children>
+               <VBox.margin>
+                  <Insets bottom="2.0" />
+               </VBox.margin>
             </HBox>
             <TextArea fx:id="txtDictionary" text="Welcome to Alien Dictionary v2019." />
          </children>
